@@ -1,0 +1,233 @@
+[
+ {
+  "doctype": "Custom Field",
+  "dt": "Sales Invoice",
+  "fieldname": "custom_kra_etims_section",
+  "fieldtype": "Section Break",
+  "insert_after": "remarks",
+  "label": "KRA eTIMS (VSCU)",
+  "name": "Sales Invoice-custom_kra_etims_section"
+ },
+ {
+  "default": "Pending",
+  "doctype": "Custom Field",
+  "dt": "Sales Invoice",
+  "fieldname": "custom_kra_fiscal_status",
+  "fieldtype": "Select",
+  "insert_after": "custom_kra_etims_section",
+  "label": "KRA Fiscal Status",
+  "name": "Sales Invoice-custom_kra_fiscal_status",
+  "options": "Pending\nFiscalized\nFailed",
+  "read_only": 1
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Sales Invoice",
+  "fieldname": "custom_kra_invc_no",
+  "fieldtype": "Int",
+  "insert_after": "custom_kra_fiscal_status",
+  "label": "KRA Fiscal Invoice No",
+  "name": "Sales Invoice-custom_kra_invc_no",
+  "read_only": 1
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Sales Invoice",
+  "fieldname": "custom_kra_sdc_id",
+  "fieldtype": "Data",
+  "insert_after": "custom_kra_invc_no",
+  "label": "KRA SDC ID",
+  "name": "Sales Invoice-custom_kra_sdc_id",
+  "read_only": 1
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Sales Invoice",
+  "fieldname": "custom_kra_mrc_no",
+  "fieldtype": "Data",
+  "insert_after": "custom_kra_sdc_id",
+  "label": "KRA MRC No",
+  "name": "Sales Invoice-custom_kra_mrc_no",
+  "read_only": 1
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Sales Invoice",
+  "fieldname": "custom_kra_col_break",
+  "fieldtype": "Column Break",
+  "insert_after": "custom_kra_mrc_no",
+  "name": "Sales Invoice-custom_kra_col_break"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Sales Invoice",
+  "fieldname": "custom_kra_rcpt_sign",
+  "fieldtype": "Data",
+  "insert_after": "custom_kra_col_break",
+  "label": "KRA Receipt Signature",
+  "name": "Sales Invoice-custom_kra_rcpt_sign",
+  "read_only": 1
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Sales Invoice",
+  "fieldname": "custom_kra_intrl_data",
+  "fieldtype": "Data",
+  "insert_after": "custom_kra_rcpt_sign",
+  "label": "KRA Internal Data",
+  "name": "Sales Invoice-custom_kra_intrl_data",
+  "read_only": 1
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Sales Invoice",
+  "fieldname": "custom_kra_qr_code",
+  "fieldtype": "Small Text",
+  "insert_after": "custom_kra_intrl_data",
+  "label": "KRA QR Verification URL",
+  "name": "Sales Invoice-custom_kra_qr_code",
+  "read_only": 1
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Sales Invoice",
+  "fieldname": "custom_kra_org_invc_no",
+  "fieldtype": "Data",
+  "insert_after": "custom_kra_qr_code",
+  "label": "KRA Original Fiscal Invoice No",
+  "name": "Sales Invoice-custom_kra_org_invc_no",
+  "read_only": 1
+ },
+ {
+  "default": "01",
+  "depends_on": "eval:doc.is_return",
+  "doctype": "Custom Field",
+  "dt": "Sales Invoice",
+  "fieldname": "custom_kra_refund_reason",
+  "fieldtype": "Select",
+  "insert_after": "custom_kra_org_invc_no",
+  "label": "KRA Credit Note Reason",
+  "name": "Sales Invoice-custom_kra_refund_reason",
+  "options": "01\n02\n03\n04\n05\n06"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Sales Invoice",
+  "fieldname": "custom_kra_bhf_id",
+  "fieldtype": "Data",
+  "insert_after": "custom_kra_refund_reason",
+  "label": "KRA Branch Override (bhfId)",
+  "name": "Sales Invoice-custom_kra_bhf_id"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Item",
+  "fieldname": "custom_kra_etims_section",
+  "fieldtype": "Section Break",
+  "insert_after": "description",
+  "label": "KRA eTIMS",
+  "name": "Item-custom_kra_etims_section"
+ },
+ {
+  "description": "Leave blank to use Item Code as KRA itemCd.",
+  "doctype": "Custom Field",
+  "dt": "Item",
+  "fieldname": "custom_kra_item_cd",
+  "fieldtype": "Data",
+  "insert_after": "custom_kra_etims_section",
+  "label": "KRA Item Code",
+  "name": "Item-custom_kra_item_cd"
+ },
+ {
+  "default": "50131702",
+  "doctype": "Custom Field",
+  "dt": "Item",
+  "fieldname": "custom_kra_hs_code",
+  "fieldtype": "Data",
+  "insert_after": "custom_kra_item_cd",
+  "label": "KRA HS / Classification Code",
+  "name": "Item-custom_kra_hs_code"
+ },
+ {
+  "default": "NT",
+  "doctype": "Custom Field",
+  "dt": "Item",
+  "fieldname": "custom_kra_pkg_unit",
+  "fieldtype": "Data",
+  "insert_after": "custom_kra_hs_code",
+  "label": "KRA Packaging Unit Code",
+  "name": "Item-custom_kra_pkg_unit"
+ },
+ {
+  "default": "U",
+  "doctype": "Custom Field",
+  "dt": "Item",
+  "fieldname": "custom_kra_qty_unit",
+  "fieldtype": "Data",
+  "insert_after": "custom_kra_pkg_unit",
+  "label": "KRA Quantity Unit Code",
+  "name": "Item-custom_kra_qty_unit"
+ },
+ {
+  "default": "B",
+  "doctype": "Custom Field",
+  "dt": "Item",
+  "fieldname": "custom_kra_tax_type",
+  "fieldtype": "Select",
+  "insert_after": "custom_kra_qty_unit",
+  "label": "KRA Tax Type",
+  "name": "Item-custom_kra_tax_type",
+  "options": "\nA\nB\nC\nD\nE"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Sales Invoice Item",
+  "fetch_from": "item_code.custom_kra_item_cd",
+  "fieldname": "custom_kra_item_cd",
+  "fieldtype": "Data",
+  "insert_after": "item_tax_template",
+  "label": "KRA Item Code",
+  "name": "Sales Invoice Item-custom_kra_item_cd"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Sales Invoice Item",
+  "fetch_from": "item_code.custom_kra_hs_code",
+  "fieldname": "custom_kra_hs_code",
+  "fieldtype": "Data",
+  "insert_after": "custom_kra_item_cd",
+  "label": "KRA HS Code",
+  "name": "Sales Invoice Item-custom_kra_hs_code"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Sales Invoice Item",
+  "fetch_from": "item_code.custom_kra_pkg_unit",
+  "fieldname": "custom_kra_pkg_unit",
+  "fieldtype": "Data",
+  "insert_after": "custom_kra_hs_code",
+  "label": "KRA Packaging Unit",
+  "name": "Sales Invoice Item-custom_kra_pkg_unit"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Sales Invoice Item",
+  "fetch_from": "item_code.custom_kra_qty_unit",
+  "fieldname": "custom_kra_qty_unit",
+  "fieldtype": "Data",
+  "insert_after": "custom_kra_pkg_unit",
+  "label": "KRA Quantity Unit",
+  "name": "Sales Invoice Item-custom_kra_qty_unit"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Sales Invoice Item",
+  "fetch_from": "item_code.custom_kra_tax_type",
+  "fieldname": "custom_kra_tax_type",
+  "fieldtype": "Select",
+  "insert_after": "custom_kra_qty_unit",
+  "label": "KRA Tax Type",
+  "name": "Sales Invoice Item-custom_kra_tax_type",
+  "options": "\nA\nB\nC\nD\nE"
+ }
+]

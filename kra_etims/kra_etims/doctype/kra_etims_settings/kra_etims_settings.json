@@ -1,0 +1,130 @@
+{
+ "actions": [],
+ "creation": "2026-11-25 14:30:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "enabled",
+  "environment",
+  "company",
+  "column_break_conn",
+  "vscu_url",
+  "bhf_id",
+  "dvc_srl_no",
+  "timeout",
+  "section_break_seq",
+  "next_invc_no",
+  "section_break_cf",
+  "cf_client_id",
+  "cf_client_secret"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "default": "Sandbox",
+   "fieldname": "environment",
+   "fieldtype": "Select",
+   "label": "Environment",
+   "options": "Sandbox\nProduction",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Default Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "column_break_conn",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Public HTTPS URL of your VSCU server (e.g. Cloudflare Tunnel URL for Frappe Cloud) or http://127.0.0.1:8088/ for local bench.",
+   "fieldname": "vscu_url",
+   "fieldtype": "Data",
+   "label": "VSCU Server URL",
+   "reqd": 1
+  },
+  {
+   "default": "00",
+   "fieldname": "bhf_id",
+   "fieldtype": "Data",
+   "label": "Branch ID (bhfId)",
+   "reqd": 1
+  },
+  {
+   "default": "SANDBOX-SRL-001",
+   "description": "Used for one-time VSCU device initialization.",
+   "fieldname": "dvc_srl_no",
+   "fieldtype": "Data",
+   "label": "Device Serial Number"
+  },
+  {
+   "default": "30",
+   "fieldname": "timeout",
+   "fieldtype": "Float",
+   "label": "Request Timeout (Seconds)"
+  },
+  {
+   "fieldname": "section_break_seq",
+   "fieldtype": "Section Break",
+   "label": "Fiscal Sequence"
+  },
+  {
+   "default": "1",
+   "description": "Next sequential fiscal invoice number (invcNo). Shared by Sales Invoices and Credit Notes.",
+   "fieldname": "next_invc_no",
+   "fieldtype": "Int",
+   "label": "Next Fiscal Invoice Number",
+   "reqd": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_cf",
+   "fieldtype": "Section Break",
+   "label": "Cloudflare Access (Optional)"
+  },
+  {
+   "fieldname": "cf_client_id",
+   "fieldtype": "Password",
+   "label": "CF-Access-Client-Id"
+  },
+  {
+   "fieldname": "cf_client_secret",
+   "fieldtype": "Password",
+   "label": "CF-Access-Client-Secret"
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-11-25 14:30:00.000000",
+ "modified_by": "Administrator",
+ "module": "KRA eTIMS",
+ "name": "KRA eTIMS Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Accounts Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

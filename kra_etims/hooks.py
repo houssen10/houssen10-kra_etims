@@ -1,0 +1,22 @@
+app_name = "kra_etims"
+app_title = "KRA eTIMS"
+app_publisher = "houssen10"
+app_description = "KRA eTIMS VSCU integration for ERPNext using vscu-python-sdk"
+app_email = "admin@example.com"
+app_license = "MIT"
+
+doc_events = {
+    "Sales Invoice": {
+        "on_submit": "kra_etims.etims.fiscalize_sales_invoice",
+    },
+}
+
+fixtures = [
+    {
+        "dt": "Custom Field",
+        "filters": [
+            ["fieldname", "like", "custom_kra_%"],
+            ["dt", "in", ["Sales Invoice", "Sales Invoice Item", "Item"]],
+        ],
+    },
+]
