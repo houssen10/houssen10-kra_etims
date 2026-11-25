@@ -5,6 +5,15 @@ app_description = "KRA eTIMS VSCU integration for ERPNext using vscu-python-sdk"
 app_email = "admin@example.com"
 app_license = "MIT"
 
+add_to_apps_screen = [
+    {
+        "name": app_name,
+        "logo": "/assets/kra_etims/images/kra_etims.svg",
+        "title": app_title,
+        "route": "/app/kra-etims",
+    }
+]
+
 doc_events = {
     "Sales Invoice": {
         "on_submit": "kra_etims.etims.fiscalize_sales_invoice",
