@@ -20,6 +20,12 @@ doc_events = {
     },
 }
 
+jinja = {
+    "methods": [
+        "kra_etims.etims.get_qr_data_uri",
+    ],
+}
+
 fixtures = [
     {
         "dt": "Custom Field",

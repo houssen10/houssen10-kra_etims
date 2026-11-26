@@ -158,3 +158,31 @@ def test_connection():
         )
     except VscuException as exc:
         frappe.throw(_("VSCU connection test failed: {0}").format(exc))
+
+
+def get_qr_data_uri(data: str) -> str:
+    """Return a data:image/png;base64,... (or SVG) QR code URI for Jinja Print Formats."""
+    if not data:
+        return ""
+    import base64
+    from io import BytesIO
+
+    try:
+        import pyqrcode
+
+        qr = pyqrcode.create(str(data))
+        buf = BytesIO()
+        qr.png(buf, scale=4, quiet_zone=2)
+        b64 = base64.b64encode(buf.getvalue()).decode("ascii")
+        return f"data:image/png;base64,{b64}"
+    except Exception:
+        try:
+            import qrcode
+
+            img = qrcode.make(str(data))
+            buf = BytesIO()
+            img.save(buf, format="PNG")
+            b64 = base64.b64encode(buf.getvalue()).decode("ascii")
+            return f"data:image/png;base64,{b64}"
+        except Exception:
+            return ""

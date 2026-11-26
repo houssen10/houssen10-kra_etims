@@ -2,10 +2,19 @@
  {
   "doctype": "Custom Field",
   "dt": "Sales Invoice",
+  "fieldname": "custom_kra_etims_tab",
+  "fieldtype": "Tab Break",
+  "insert_after": "connections_tab",
+  "label": "KRA eTIMS (VSCU)",
+  "name": "Sales Invoice-custom_kra_etims_tab"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Sales Invoice",
   "fieldname": "custom_kra_etims_section",
   "fieldtype": "Section Break",
-  "insert_after": "remarks",
-  "label": "KRA eTIMS (VSCU)",
+  "insert_after": "custom_kra_etims_tab",
+  "label": "Fiscalization Details",
   "name": "Sales Invoice-custom_kra_etims_section"
  },
  {
